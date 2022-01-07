@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
-import loadContract from "./utils/load-contract";
+import contract from "@truffle/contract";
 
 export default function Home() {
     const [web3Api, setWeb3Api] = useState({
@@ -20,6 +20,21 @@ export default function Home() {
     const accountListener = (provider) => {
         provider.on("accountsChanged", () => window.location.reload());
         provider.on("chainChanged", () => window.location.reload());
+    };
+
+    const loadContract = async (name, provider) => {
+        const res = await fetch(`/contracts/${name}.json`);
+        const Artifact = await res.json();
+        const _contract = contract(Artifact);
+        _contract.setProvider(provider);
+
+        let deployedContract;
+        try {
+            deployedContract = await _contract.deployed();
+        } catch (e) {
+            console.error(e);
+        }
+        return deployedContract;
     };
 
     useEffect(() => {
