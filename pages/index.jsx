@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Web3 from "web3";
-import { loadContract } from "./utils/load-contract";
 import detectEthereumProvider from "@metamask/detect-provider";
-import { useRouter } from "next/router";
+import loadContract from "./utils/load-contract";
 
 export default function Home() {
     const [web3Api, setWeb3Api] = useState({
@@ -14,8 +13,6 @@ export default function Home() {
     const [account, setAccount] = useState(null);
     const [balance, setBalance] = useState(null);
     const [reload, setReload] = useState(false);
-
-    const route = useRouter();
 
     const reloadEffect = () => setReload(!reload);
     const canConnect = account && web3Api.contract;
