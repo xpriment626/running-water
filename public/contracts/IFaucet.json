@@ -25,20 +25,20 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "//SPDX-License-Identifier: Unlicense\npragma solidity ^0.8.0;\n\ninterface IFaucet {\n    function addFunds() external payable;\n    function withdraw() external;\n}",
-  "sourcePath": "/Users/emmettchilds-gevero/Desktop/NextJS/running-water/contracts/IFaucet.sol",
+  "sourcePath": "/Users/emmettchilds-gevero/Desktop/Frontend/NextJS/running-water/contracts/IFaucet.sol",
   "ast": {
     "absolutePath": "project:/contracts/IFaucet.sol",
     "exportedSymbols": {
       "IFaucet": [
-        133
+        258
       ]
     },
-    "id": 134,
+    "id": 259,
     "license": "Unlicense",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 126,
+        "id": 251,
         "literals": [
           "solidity",
           "^",
@@ -46,7 +46,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "37:23:1"
+        "src": "37:23:2"
       },
       {
         "abstract": false,
@@ -55,182 +55,83 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 133,
+        "id": 258,
         "linearizedBaseContracts": [
-          133
+          258
         ],
         "name": "IFaucet",
-        "nameLocation": "72:7:1",
+        "nameLocation": "72:7:2",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "a26759cb",
-            "id": 129,
+            "id": 254,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "addFunds",
-            "nameLocation": "95:8:1",
+            "nameLocation": "95:8:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 127,
+              "id": 252,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "103:2:1"
+              "src": "103:2:2"
             },
             "returnParameters": {
-              "id": 128,
+              "id": 253,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "122:0:1"
+              "src": "122:0:2"
             },
-            "scope": 133,
-            "src": "86:37:1",
+            "scope": 258,
+            "src": "86:37:2",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "3ccfd60b",
-            "id": 132,
+            "id": 257,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "withdraw",
-            "nameLocation": "137:8:1",
+            "nameLocation": "137:8:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 130,
+              "id": 255,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "145:2:1"
+              "src": "145:2:2"
             },
             "returnParameters": {
-              "id": 131,
+              "id": 256,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "156:0:1"
+              "src": "156:0:2"
             },
-            "scope": 133,
-            "src": "128:29:1",
+            "scope": 258,
+            "src": "128:29:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 134,
-        "src": "62:97:1",
+        "scope": 259,
+        "src": "62:97:2",
         "usedErrors": []
       }
     ],
-    "src": "37:122:1"
-  },
-  "legacyAST": {
-    "absolutePath": "project:/contracts/IFaucet.sol",
-    "exportedSymbols": {
-      "IFaucet": [
-        133
-      ]
-    },
-    "id": 134,
-    "license": "Unlicense",
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 126,
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".0"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "37:23:1"
-      },
-      {
-        "abstract": false,
-        "baseContracts": [],
-        "canonicalName": "IFaucet",
-        "contractDependencies": [],
-        "contractKind": "interface",
-        "fullyImplemented": false,
-        "id": 133,
-        "linearizedBaseContracts": [
-          133
-        ],
-        "name": "IFaucet",
-        "nameLocation": "72:7:1",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "functionSelector": "a26759cb",
-            "id": 129,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "addFunds",
-            "nameLocation": "95:8:1",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 127,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "103:2:1"
-            },
-            "returnParameters": {
-              "id": 128,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "122:0:1"
-            },
-            "scope": 133,
-            "src": "86:37:1",
-            "stateMutability": "payable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "functionSelector": "3ccfd60b",
-            "id": 132,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "withdraw",
-            "nameLocation": "137:8:1",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 130,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "145:2:1"
-            },
-            "returnParameters": {
-              "id": 131,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "156:0:1"
-            },
-            "scope": 133,
-            "src": "128:29:1",
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          }
-        ],
-        "scope": 134,
-        "src": "62:97:1",
-        "usedErrors": []
-      }
-    ],
-    "src": "37:122:1"
+    "src": "37:122:2"
   },
   "compiler": {
     "name": "solc",
     "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-06T06:02:22.844Z",
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-09-12T06:33:19.131Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

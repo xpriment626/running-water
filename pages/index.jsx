@@ -41,7 +41,7 @@ export default function Home() {
         const loadProvider = async () => {
             const provider = await detectEthereumProvider();
             if (provider) {
-                const contract = await loadContract("Faucet", provider);
+                const contract = await loadContract("FaucetGoerli", provider);
                 accountListener(provider);
                 setWeb3Api({
                     web3: new Web3(provider),
@@ -76,7 +76,7 @@ export default function Home() {
         const { contract, web3 } = web3Api;
         await contract.addFunds({
             from: account,
-            value: web3.utils.toWei("0.5", "ether"),
+            value: web3.utils.toWei("0.25", "ether"),
         });
         reloadEffect();
     }, [web3Api, account]);
@@ -84,7 +84,7 @@ export default function Home() {
         const { contract, web3 } = web3Api;
         await contract.addFunds({
             from: account,
-            value: web3.utils.toWei("1", "ether"),
+            value: web3.utils.toWei("0.5", "ether"),
         });
         reloadEffect();
     }, [web3Api, account]);
@@ -92,15 +92,7 @@ export default function Home() {
         const { contract, web3 } = web3Api;
         await contract.addFunds({
             from: account,
-            value: web3.utils.toWei("3", "ether"),
-        });
-        reloadEffect();
-    }, [web3Api, account]);
-    const ethAmount4 = useCallback(async () => {
-        const { contract, web3 } = web3Api;
-        await contract.addFunds({
-            from: account,
-            value: web3.utils.toWei("5", "ether"),
+            value: web3.utils.toWei("1", "ether"),
         });
         reloadEffect();
     }, [web3Api, account]);
@@ -141,37 +133,31 @@ export default function Home() {
                 </div>
                 {!canConnect && (
                     <i className="text-red-700 text-xl">
-                        <strong>*WARNING*</strong> connect to Ropsten Testnet
+                        <strong>*WARNING*</strong> connect to Goerli Testnet
                     </i>
                 )}
                 <div className="pb-3 space-x-2">
+                    <div className="text-xl pb-3">Deposit</div>
                     <button
                         className="h-10 px-6 font-semibold rounded-md bg-black text-white hover:bg-transparent hover:text-green-200 hover:text-bold hover:border-2 hover:border-black hover:shadow-black hover:shadow-lg disabled"
                         onClick={ethAmount1}
                         disabled={!canConnect}
                     >
-                        0.5 ETH
+                        0.25 ETH
                     </button>
                     <button
                         className="h-10 px-6 font-semibold rounded-md bg-black text-white hover:bg-transparent hover:text-green-200 hover:text-bold hover:border-2 hover:border-black hover:shadow-black hover:shadow-lg"
                         onClick={ethAmount2}
                         disabled={!canConnect}
                     >
-                        1 ETH
+                        0.5 ETH
                     </button>
                     <button
                         className="h-10 px-6 font-semibold rounded-md bg-black text-white hover:bg-transparent hover:text-green-200 hover:text-bold hover:border-2 hover:border-black hover:shadow-black hover:shadow-lg"
                         onClick={ethAmount3}
                         disabled={!canConnect}
                     >
-                        3 ETH
-                    </button>
-                    <button
-                        className="h-10 px-6 font-semibold rounded-md bg-black text-white hover:bg-transparent hover:text-green-200 hover:text-bold hover:border-2 hover:border-black hover:shadow-black hover:shadow-lg"
-                        onClick={ethAmount4}
-                        disabled={!canConnect}
-                    >
-                        5 ETH
+                        1 ETH
                     </button>
                 </div>
                 <button
